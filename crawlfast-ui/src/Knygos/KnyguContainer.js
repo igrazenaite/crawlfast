@@ -1,22 +1,22 @@
 import React, {Component} from 'react';
-import ManyProductsComponent from './ManyProductsComponent';
+import DaugKnyguComponent from './DaugKnyguComponent';
 import axios from 'axios';
 
-class ProductsContainer extends Component{
+class KnyguContainer extends Component{
     constructor() {
         super();
 
         this.state = {
-            products: []
+            knygos: []
         }
     }
 
     componentWillMount(){
         axios
-            .get("http://localhost:8082/rest/product")
+            .get("http://localhost:8082/rest/institucija/knyga")
             .then((responce) => {
                 console.log(responce);
-                this.setState({products: responce.data});
+                this.setState({knygos: responce.data});
             })
             .catch((error) => {
                 console.log(error);
@@ -24,7 +24,7 @@ class ProductsContainer extends Component{
     }
 
     render (){
-        return <ManyProductsComponent allProducts={this.state.products}/>
+        return <DaugKnyguComponent visosKnygos={this.state.knygos}/>
     }
 }
 /* var BackToMainNavigation =(props)=>{
@@ -39,4 +39,4 @@ class ProductsContainer extends Component{
         </div>
     );
   }; */
-export default ProductsContainer;
+export default KnyguContainer;

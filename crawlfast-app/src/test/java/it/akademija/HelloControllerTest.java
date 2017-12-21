@@ -36,14 +36,14 @@ public class HelloControllerTest {
 //                .body(is("Hello World!"));
 //    }
 
-    @Test
-    public void testCalc() throws Exception {
-        given().param("left", 100)
-                .param("right", 200)
-                .get("/calc")
-                .then()
-                .body("left", is(100))
-                .body("right", is(200))
-                .body("answer", is(300));
-    }
+//    @Test
+//    public void testCalc() throws Exception {
+//        given().param("left", 100)
+//                .param("right", 200)
+//                .get("/calc")
+//                .then()
+//                .body("left", is(100))
+//                .body("right", is(200))
+//                .body("answer", is(300));
+//    }
 }
